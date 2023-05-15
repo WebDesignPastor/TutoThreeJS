@@ -44,4 +44,15 @@ window.addEventListener('resize', () => {
   // Update Sizes
   sizes.width = window.innerWidth
   sizes.height = window.innerHeight
+  // Update Camera
+  camera.aspect = sizes.width / sizes.height
+  camera.updateProjectionMatrix()
+  renderer.setSize(sizes.width, sizes.height)
 })
+
+const loop = () => {
+  mesh.position.x += 0.1
+  renderer.render(scene, camera)
+  window.requestAnimationFrame(loop)
+}
+loop()
