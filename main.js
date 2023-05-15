@@ -2,7 +2,7 @@ import * as THREE from 'three';
 
 const scene = new THREE.Scene();
 
-//Create our sphere
+// Create our sphere
 
 const geometry = new THREE.SphereGeometry(3, 64, 64)
 const material = new THREE.MeshStandardMaterial({
@@ -15,3 +15,7 @@ scene.add(mesh)
 
 const camera = new THREE.PerspectiveCamera(45, 800, 600)
 scene.add(camera)
+
+// Render
+const canvas = document.querySelector('.webgl')
+const render = new THREE.WebGLRenderer({ canvas })
